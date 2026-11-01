@@ -3,6 +3,9 @@
 Compresses images with Singular Value Decomposition (SVD): each colour channel
 is factored as A = U Σ Vᵀ and only the strongest k singular values are kept.
 
+**Try it live:** https://chethnnnnnn.github.io/image-compressor/ — runs `app.py`
+entirely in your browser (the first load takes about 20–30 seconds).
+
 ## Run the app (upload a picture in your browser)
 
 First extract the zip (right-click it, then Extract All). Then either:
@@ -45,6 +48,7 @@ Writes `rank_k.png`, `comparison.png` and `singular_values.png` to `svd_output/`
 | File | Purpose |
 |---|---|
 | `app.py` | Streamlit web app |
+| `index.html` | Runs `app.py` in the browser for the live link (via stlite) |
 | `svd_compression.py` | SVD functions + command-line tool |
 | `run_app.bat` | One-click launcher for Windows |
 | `requirements.txt` | numpy, pillow, matplotlib, streamlit |
