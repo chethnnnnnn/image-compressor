@@ -1,0 +1,28 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <title>SVD Image Compressor</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@stlite/browser@1.12.0/build/stlite.css" />
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module">
+      // Runs this repository's app.py entirely in the visitor's browser (Streamlit on Pyodide via stlite)
+      import { mount } from "https://cdn.jsdelivr.net/npm/@stlite/browser@1.12.0/build/stlite.js";
+      mount(
+        {
+          requirements: ["numpy", "pillow", "matplotlib"],
+          entrypoint: "app.py",
+          files: {
+            "app.py": { url: "./app.py" },
+            "svd_compression.py": { url: "./svd_compression.py" },
+            "test_image.png": { url: "./test_image.png" },
+          },
+        },
+        document.getElementById("root"),
+      );
+    </script>
+  </body>
+</html>
